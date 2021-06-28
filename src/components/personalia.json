@@ -1,0 +1,17 @@
+{
+  "name": {
+    "first": "Riechi Norent",
+    "last": "Khy",
+    "display": "Norent Khy"
+  },
+  "dateOfBirth": "04-02-1990",
+  "gender": "male",
+  "nationality": "Dutch",
+  "placeOfBirth": "Deventer",
+  "phoneNumber": "+31 (6) 2427 7581",
+  "emailAddress": "norentkhy@gmail.com",
+  "linkedInUrl": "linkedin.com/in/norentkhy",
+  "address": "Stationslaan 65C6",
+  "postalCode": "4815 GW",
+  "city": "Breda"
+}

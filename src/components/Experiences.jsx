@@ -1,34 +1,109 @@
+import { FlexColumn, FlexRow } from './Styled'
 import React from 'react'
 import styled from 'styled-components'
-import formatDate from './formatDate'
+import formatDate from '../data/formatDate'
 
-function WorkExperience({ experience }) {
-  const mostRecentRoles = experience.roles.sort(sortByMostRecent)
-
+export function Experiences({ experiences }) {
   return (
-    <ExperienceGrid>
-      <ExperienceHeader>
-        <ExperienceTitle>{experience.company}</ExperienceTitle>
-        <ExperienceLocation>{experience.location}</ExperienceLocation>
-      </ExperienceHeader>
-      <Roles>
-        {mostRecentRoles.map((role) => (
-          <RoleGrid>
-            <RoleTitle>{role.title}</RoleTitle>
-            <RolePeriod>
-              <DateRange range={role.period} />
-            </RolePeriod>
-            <RoleDescription>
-              {role.tasks.map((task) => (
-                <RoleItem>{task}</RoleItem>
-              ))}
-            </RoleDescription>
-          </RoleGrid>
-        ))}
-      </Roles>
-    </ExperienceGrid>
+    <FlexColumn>
+      {experiences.map(({ organisation, location, roles }) => (
+        <ExperienceInstance
+          {...{ key: organisation, organisation, location, roles }}
+        />
+      ))}
+    </FlexColumn>
   )
 }
+
+function ExperienceInstance({ organisation, location, roles }) {
+  const mostRecentRoles = roles.sort(sortByMostRecent)
+
+  return (
+    <FlexColumn>
+      <ExperienceHeader {...{ organisation, location }} />
+      {mostRecentRoles.map(({ title, subtitle, period, tasks }) => (
+        <Role {...{ key: title, title, subtitle, period, tasks }} />
+      ))}
+    </FlexColumn>
+  )
+}
+
+function ExperienceHeader({ organisation, location }) {
+  return (
+    <div>
+      <ExperienceTitle>{organisation}</ExperienceTitle>
+      <ExperienceLocation>{location}</ExperienceLocation>
+    </div>
+  )
+}
+
+function Role({ title, period, tasks, subtitle }) {
+  return (
+    <FlexColumnMargin>
+      <FlexRowTextBaseline>
+        <TitleContainer>
+          <RoleTitle>{title}</RoleTitle>
+          <RoleSubtitle>{subtitle}</RoleSubtitle>
+        </TitleContainer>
+        <DateRange range={period} />
+      </FlexRowTextBaseline>
+      <FlexRow>
+        <TaskList>
+          {tasks.map((task, i) => (
+            <TaskListItem key={i} task={task} />
+          ))}
+        </TaskList>
+      </FlexRow>
+    </FlexColumnMargin>
+  )
+}
+
+function DateRange({ range }) {
+  const formatted = {
+    start: formatDate(range.start),
+    end: formatDate(range.end),
+  }
+
+  return (
+    <Timeline>
+      {formatted.start} — {formatted.end}
+    </Timeline>
+  )
+}
+
+function TaskListItem({ task }) {
+  if (!Array.isArray(task))
+    return <ListItemRelativeFont80>{task}</ListItemRelativeFont80>
+
+  return (
+    <ListItemRelativeFont80>
+      <FontWeight500>{task[0]}</FontWeight500> &nbsp; {task[1]}
+    </ListItemRelativeFont80>
+  )
+}
+
+const FlexColumnMargin = styled(FlexColumn)`
+  margin-top: 0.4em;
+`
+
+const FlexRowTextBaseline = styled(FlexRow)`
+  align-items: baseline;
+  justify-content: space-between;
+`
+
+const TaskList = styled.ul`
+  list-style-type: none;
+  margin-block: 0;
+  padding-inline: 0;
+  margin-left: 2em;
+`
+
+const ListItemRelativeFont80 = styled.li`
+  font-family: 'Roboto';
+  font-weight: 100;
+  font-size: 80%;
+  line-height: 1.3em;
+`
 
 function sortByMostRecent(a, b) {
   const monthsInYear = 12
@@ -38,161 +113,37 @@ function sortByMostRecent(a, b) {
   return bMonths - aMonths
 }
 
-function Education({ education }) {
-  const { master, bachelor } = education
-  return (
-    <ExperienceGrid>
-      <ExperienceHeader>
-        <ExperienceTitle>{master.program}</ExperienceTitle>
-        <ExperienceLocation>{master.institution}</ExperienceLocation>
-      </ExperienceHeader>
-      <Roles>
-        <RoleGrid>
-          <RoleTitle>Master {master.specialization}</RoleTitle>
-          <RolePeriod>
-            <DateRange range={master.period} />
-          </RolePeriod>
-          <RoleDescription>
-            <DescriptionGrid>
-              <Descriptor>Thesis</Descriptor>
-              <Description>{master.graduationThesis}</Description>
-            </DescriptionGrid>
-            <DescriptionGrid>
-              <Descriptor>Internship</Descriptor>
-              <Description>{master.internshipThesis}</Description>
-            </DescriptionGrid>
-          </RoleDescription>
-        </RoleGrid>
-        <RoleGrid>
-          <RoleTitle>Bachelor {bachelor.major}</RoleTitle>
-          <RolePeriod>
-            <DateRange range={bachelor.period} />
-          </RolePeriod>
-          <RoleDescription>
-            <DescriptionGrid>
-              <Descriptor>Thesis</Descriptor>
-              <Description>{bachelor.thesis}</Description>
-            </DescriptionGrid>
-            <DescriptionGrid>
-              <Descriptor>Minor</Descriptor>
-              <Description>{bachelor.minor}</Description>
-            </DescriptionGrid>
-          </RoleDescription>
-        </RoleGrid>
-      </Roles>
-    </ExperienceGrid>
-  )
-}
-
-const DescriptionGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1cm 1fr;
-  grid-template-areas: 'descriptor description';
-  margin-bottom: 0.2cm;
-
-  & > * {
-    display: inline-block;
-  }
+const Timeline = styled.div`
+  font-size: 80%;
+`
+const TitleContainer = styled(FlexColumn)`
+  margin-left: 1em;
+  margin-bottom: 0.1em;
 `
 
-const Descriptor = styled.span`
-  grid-area: descriptor;
-  font-size: 0.3cm;
-  font-style: italic;
-  padding-right: 0.1cm;
-  justify-self: end;
-  margin-top: 0.05cm;
-`
-
-const Description = styled.span`
-  grid-area: description;
-  padding-left: 0.1cm;
-  border-left: 0.01cm ridge black;
-`
-
-function DateRange({ range }) {
-  const formatted = {
-    start: formatDate(range.start),
-    end: formatDate(range.end),
-  }
-
-  return (
-    <div>
-      <EndAligned>{formatted.end}</EndAligned>
-      <EndAligned>{formatted.start}</EndAligned>
-    </div>
-  )
-}
-
-const EndAligned = styled.div`
-  text-align: end;
-  padding-right: 0.1cm;
-`
-
-const RoleGrid = styled.li`
-  display: grid;
-  grid-template-columns: 1.7cm 1fr;
-  grid-template-areas:
-    'role-period role-title'
-    'role-period role-description';
-
-  margin-top: 0.4cm;
-`
-
-const RoleTitle = styled.div`
-  grid-area: role-title;
-  margin-left: 0.5em;
-`
-
-const RolePeriod = styled.div`
-  grid-area: role-period;
-  justify-self: start;
-  font-size: 0.35cm;
-  padding-top: 0.05cm;
-  border-right: 1px solid black;
-  padding-right: 0.1cm;
-  width: 1.5cm;
-`
-
-const RoleDescription = styled.ul`
-  grid-area: role-description;
-  list-style-type: none;
-  font-size: 0.35cm;
-  margin-bottom: 0.1cm;
-`
-
-const RoleItem = styled.li`
-  margin-bottom: 0.1cm;
-`
-
-const ExperienceHeader = styled.div`
-  grid-area: company-header;
-`
-
-const ExperienceGrid = styled.div`
-  display: grid;
-  grid-template-areas:
-    'company-header'
-    'roles';
-
-  margin-top: 0.3cm;
-`
-
-const ExperienceTitle = styled.span`
-  display: inline-block;
-  font-size: 0.5cm;
+const FontWeight500 = styled.span`
   font-weight: 500;
 `
 
-const ExperienceLocation = styled.span`
+const RoleTitle = styled.div`
+  font-size: 100%;
+  line-height: 1em;
+`
+
+const RoleSubtitle = styled.div`
+  font-size: 80%;
+  color: #777777;
+`
+
+const ExperienceTitle = styled.span`
+  font: Roboto;
   display: inline-block;
-  align-self: bottom;
-  padding-left: 0.2cm;
+  font-size: 4mm;
+  font-weight: 500;
+  margin-top: 1em;
 `
 
-const Roles = styled.div`
-  grid-area: roles;
-  list-style-type: none;
+const ExperienceLocation = styled.span`
+  padding-left: 2mm;
+  color: #777777;
 `
-
-export { WorkExperience, Education }

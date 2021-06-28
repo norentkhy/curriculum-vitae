@@ -1,10 +1,10 @@
+import {
+  PhoneIcon as PhoneIconSrc,
+  MailIcon as MailIconSrc,
+  LinkedInIcon as LinkedInIconSrc,
+} from '../assets/icons'
 import React from 'react'
 import styled from 'styled-components'
-import {
-  PhoneIcon as RawPhoneIcon,
-  MailIcon as RawMailIcon,
-  LinkedInIcon as RawLinkedInIcon,
-} from './icons'
 
 function QuickContactInfo({ personalia }) {
   const { phoneNumber, emailAddress, linkedInUrl } = personalia
@@ -65,7 +65,7 @@ const LinkedInUrl = styled.span`
   padding-right: var(--info-padding-right);
 `
 
-const PhoneIcon = styled(RawPhoneIcon)`
+const PhoneIcon = styled(PhoneIconSrc)`
   grid-area: phone-icon;
   height: var(--icon-height);
   margin: var(--icon-margin);
@@ -73,7 +73,7 @@ const PhoneIcon = styled(RawPhoneIcon)`
   justify-self: var(--icon-justify-self);
 `
 
-const MailIcon = styled(RawMailIcon)`
+const MailIcon = styled(MailIconSrc)`
   grid-area: mail-icon;
   height: var(--icon-height);
   margin: var(--icon-margin) 0;
@@ -81,7 +81,7 @@ const MailIcon = styled(RawMailIcon)`
   justify-self: var(--icon-justify-self);
 `
 
-const LinkedInIcon = styled(RawLinkedInIcon)`
+const LinkedInIcon = styled(LinkedInIconSrc)`
   grid-area: linkedin-icon;
   height: var(--icon-height);
   margin: var(--icon-margin) 0;

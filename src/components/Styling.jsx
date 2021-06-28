@@ -6,7 +6,7 @@ const Tag = styled.div`
 
 const LargeTag = styled(Tag)`
   font-size: 1.2rem;
-  margin-bottom: 0.2cm;
+  margin-bottom: 1mm;
 `
 
 const RightAligned = styled.div`
@@ -18,17 +18,18 @@ const RightAligned = styled.div`
 
 const RightAlignedUnit = styled(RightAligned)`
   font-size: 0.8rem;
-
-  --margin-vertical: 0.3cm;
-  margin-bottom: var(--margin-vertical);
 `
 
 const RightAlignedTopMargin = styled(RightAlignedUnit)`
-  margin-top: 0.4cm;
+  /* margin-top: 0.1cm; */
 `
 
 const RightAlignedBottomMargin = styled(RightAlignedUnit)`
   margin-bottom: 0.1cm;
+`
+
+const RelativelySmallerFont = styled.span`
+  font-size: 75%;
 `
 
 export {
@@ -38,4 +39,5 @@ export {
   RightAlignedUnit,
   RightAlignedTopMargin,
   RightAlignedBottomMargin,
+  RelativelySmallerFont,
 }

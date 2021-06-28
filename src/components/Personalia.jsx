@@ -1,13 +1,7 @@
+import { UnorderedList, CompactListItem, Label } from './Styled'
 import React from 'react'
-import {
-  Tag,
-  LargeTag,
-  RightAligned,
-  RightAlignedUnit,
-  RightAlignedBottomMargin,
-} from './Styling'
 
-function Personalia({ personalia, hobbiesAndInterests }) {
+export default function Personalia({ personalia }) {
   const {
     name,
     dateOfBirth,
@@ -16,72 +10,80 @@ function Personalia({ personalia, hobbiesAndInterests }) {
     address,
     postalCode,
     city,
+    maritalStatus,
   } = personalia
 
+  const Items = [
+    <Name {...{ name }} />,
+    <Nationality {...{ nationality }} />,
+    <MaritalStatus {...{ maritalStatus }} />,
+    <DateOfBirth {...{ dateOfBirth }} />,
+    <PlaceOfBirth {...{ placeOfBirth }} />,
+    <Address {...{ address, postalCode, city }} />,
+  ]
+
   return (
-    <RightAligned>
-      <LargeTag>Personalia</LargeTag>
-      <RightAlignedUnit>
-        <Name name={name} />
-        <Nationality nationality={nationality} />
-        <DateOfBirth dateOfBirth={dateOfBirth} />
-        <PlaceOfBirth placeOfBirth={placeOfBirth} />
-        <Address address={address} postalCode={postalCode} city={city} />
-        <Tag>Hobbies and Interests</Tag>
-        {hobbiesAndInterests.map((hobbyOrInterest) => (
-          <div>{hobbyOrInterest.toString()}</div>
-        ))}
-      </RightAlignedUnit>
-    </RightAligned>
+    <UnorderedList>
+      {Items.map((Item, i) => (
+        <CompactListItem key={i}>{Item}</CompactListItem>
+      ))}
+    </UnorderedList>
+  )
+}
+
+function MaritalStatus({ maritalStatus }) {
+  return (
+    <>
+      <Label>Marital Status</Label>
+      {maritalStatus}
+    </>
   )
 }
 
 function Name({ name }) {
   return (
-    <RightAlignedBottomMargin>
-      <Tag>Full Name</Tag>
+    <>
+      <Label>Full Name</Label>
       {name.first} {name.last}
-    </RightAlignedBottomMargin>
+    </>
   )
 }
 
 function Nationality({ nationality }) {
   return (
-    <RightAlignedBottomMargin>
-      <Tag>Nationality</Tag>
+    <>
+      <Label>Nationality</Label>
       {nationality}
-    </RightAlignedBottomMargin>
+    </>
   )
 }
 
 function DateOfBirth({ dateOfBirth }) {
   return (
-    <RightAlignedBottomMargin>
-      <Tag>Date of Birth</Tag>
+    <>
+      <Label>Date of Birth</Label>
       {dateOfBirth}
-    </RightAlignedBottomMargin>
+    </>
   )
 }
 
 function PlaceOfBirth({ placeOfBirth }) {
   return (
-    <RightAlignedBottomMargin>
-      <Tag>Place of Birth</Tag>
+    <>
+      <Label>Place of Birth</Label>
       {placeOfBirth}
-    </RightAlignedBottomMargin>
+    </>
   )
 }
 
 function Address({ address, postalCode, city }) {
   return (
-    <RightAlignedBottomMargin>
-      <Tag>Address</Tag>
+    <>
+      <Label>Address</Label>
       <div>{address}</div>{' '}
       <div>
         {postalCode} {city}
       </div>
-    </RightAlignedBottomMargin>
+    </>
   )
 }
-
-export default Personalia
