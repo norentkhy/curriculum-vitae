@@ -6,7 +6,7 @@ import {
 import React from 'react'
 import styled from 'styled-components'
 
-function QuickContactInfo({ personalia }) {
+export default function ContactInfoOld({ personalia }) {
   const { phoneNumber, emailAddress, linkedInUrl } = personalia
   return (
     <QuickContactInfoGrid>
@@ -23,13 +23,14 @@ function QuickContactInfo({ personalia }) {
 const QuickContactInfoGrid = styled.div`
   grid-area: quick-contact-info;
 
-  --icon-height: 0.8cm;
-  --icon-margin: 0.05cm;
+  --icon-height: 8mm;
+  --icon-margin: 0.5mm;
   --icon-align-self: center;
   --icon-justify-self: center;
   --info-align-self: center;
   --info-justify-self: end;
-  --info-padding-right: 0.2cm;
+  --info-padding-right: 1mm;
+  --info-font-size: 120%;
 
   align-self: center;
   justify-self: end;
@@ -49,6 +50,7 @@ const PhoneNumber = styled.span`
   align-self: var(--info-align-self);
   justify-self: var(--info-justify-self);
   padding-right: var(--info-padding-right);
+  font-size: var(--info-font-size);
 `
 
 const EmailAddress = styled.span`
@@ -56,6 +58,7 @@ const EmailAddress = styled.span`
   align-self: var(--info-align-self);
   justify-self: var(--info-justify-self);
   padding-right: var(--info-padding-right);
+  font-size: var(--info-font-size);
 `
 
 const LinkedInUrl = styled.span`
@@ -63,6 +66,7 @@ const LinkedInUrl = styled.span`
   align-self: var(--info-align-self);
   justify-self: var(--info-justify-self);
   padding-right: var(--info-padding-right);
+  font-size: var(--info-font-size);
 `
 
 const PhoneIcon = styled(PhoneIconSrc)`
@@ -88,5 +92,3 @@ const LinkedInIcon = styled(LinkedInIconSrc)`
   align-self: var(--icon-align-self);
   justify-self: var(--icon-justify-self);
 `
-
-export default QuickContactInfo
