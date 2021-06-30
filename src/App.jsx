@@ -1,34 +1,36 @@
 import data from './data'
 import portrait from './assets/portrait.png'
-import QuickContactInfo from './components/ContactInfo'
-import { Header, PageLayout, List, Masteries } from './components'
-
-import { Experiences } from './components/Experiences'
-import Personalia from './components/Personalia'
-import ListOfBooks from './components/SoftwareBooks'
-
+import ContactInfo from './components/ContactInfo'
+import {
+  Header,
+  PageLayout,
+  List,
+  Masteries,
+  Experience,
+  Personalia,
+  Books,
+} from './components'
 import React from 'react'
 
-const { personalia, hobbiesAndInterests } = data
-
-const selectedWorkExperiences = selectWorkExperience(data)
-const selectedEducation = selectEducation(data)
-const books = selectBooks(data)
-const [spokenLanguages, languageMasteries, toolMasteries] =
-  selectMasteries(data)
-
 export default function CurriculumVitae() {
+  const { personalia, hobbiesAndInterests } = data
+  const selectedWorkExperiences = selectWorkExperience(data)
+  const selectedEducation = selectEducation(data)
+  const books = selectBooks(data)
+  const [spokenLanguages, languageMasteries, toolMasteries] =
+    selectMasteries(data)
+
   return (
     <PageLayout
       Header={<Header name={personalia.name} portraitSource={portrait} />}
-      ContactInfo={<QuickContactInfo personalia={personalia} />}
-      WorkExperience={<Experiences experiences={selectedWorkExperiences} />}
-      Education={<Experiences experiences={selectedEducation} />}
+      ContactInfo={<ContactInfo personalia={personalia} />}
+      WorkExperience={<Experience experiences={selectedWorkExperiences} />}
+      Education={<Experience experiences={selectedEducation} />}
       Personalia={<Personalia personalia={personalia} />}
       SpokenLanguages={<Masteries masteries={spokenLanguages} />}
       LanguageMastery={<Masteries masteries={languageMasteries} />}
       ToolMastery={<Masteries masteries={toolMasteries} />}
-      SoftwareBooks={<ListOfBooks books={books} />}
+      SoftwareBooks={<Books books={books} />}
       HobbiesAndInterests={<List items={hobbiesAndInterests} />}
     />
   )

@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import formatDate from '../data/formatDate'
 
-export function Experiences({ experiences }) {
+export default function Experience({ experiences }) {
   return (
     <FlexColumn>
       {experiences.map(({ organisation, location, roles }) => (
@@ -116,8 +116,8 @@ function sortByMostRecent(a, b) {
 const Timeline = styled.div`
   font-size: 80%;
 `
-const TitleContainer = styled(FlexColumn)`
-  margin-left: 1em;
+const TitleContainer = styled(FlexRow)`
+  flex-wrap: wrap;
   margin-bottom: 0.1em;
 `
 
@@ -126,17 +126,18 @@ const FontWeight500 = styled.span`
 `
 
 const RoleTitle = styled.div`
+  margin-left: 1rem;
   font-size: 100%;
   line-height: 1em;
 `
 
 const RoleSubtitle = styled.div`
+  margin-left: 1rem;
   font-size: 80%;
   color: #777777;
 `
 
 const ExperienceTitle = styled.span`
-  font: Roboto;
   display: inline-block;
   font-size: 4mm;
   font-weight: 500;

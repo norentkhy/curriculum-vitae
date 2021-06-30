@@ -2,7 +2,7 @@ import { Label, RelativeFontSize75 } from './Styled'
 import React from 'react'
 import styled from 'styled-components'
 
-export default function ListOfBooks({ books }) {
+export default function Books({ books }) {
   return (
     <UnorderedList>
       {books.favourites.map((book) => (
