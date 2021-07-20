@@ -102,7 +102,7 @@ const ListItemRelativeFont80 = styled.li`
   font-family: 'Roboto';
   font-weight: 100;
   font-size: 80%;
-  line-height: 1.3em;
+  line-height: 1.5em;
 `
 
 function sortByMostRecent(a, b) {
@@ -129,7 +129,7 @@ const FontWeight500 = styled.span`
 const RoleTitle = styled.div`
   margin-left: 1rem;
   font-size: 100%;
-  line-height: 1em;
+  line-height: 1.4em;
 `
 
 const RoleSubtitle = styled.div`
@@ -142,7 +142,7 @@ const ExperienceTitle = styled.span`
   display: inline-block;
   font-size: 4mm;
   font-weight: 500;
-  margin-top: 1em;
+  margin-top: 0.3em;
 `
 
 const ExperienceLocation = styled.span`

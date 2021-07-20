@@ -78,6 +78,11 @@ function SideSection({ title, content }) {
 }
 
 const MarginTop = styled.div`
+  margin-top: 0.2em;
+
+  &::first-child {
+    margin-top: 0;
+  }
 `
 
 const SmallerFont = styled.div`
@@ -106,6 +111,7 @@ const FlexColumnSpaceBetween = styled(FlexColumn)`
 
 const NarrowWidthColumn = styled(FlexColumnSpaceBetween)`
   width: 8ch;
+  margin-right: 1em;
 `
 
 const RightSideFlexColumnSpaceBetween = styled(FlexColumn)`
