@@ -115,6 +115,7 @@ function sortByMostRecent(a, b) {
 
 const Timeline = styled.div`
   font-size: 80%;
+  white-space: nowrap;
 `
 const TitleContainer = styled(FlexRow)`
   flex-wrap: wrap;
