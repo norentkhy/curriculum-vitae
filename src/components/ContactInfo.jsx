@@ -5,9 +5,12 @@ import {
 } from '../assets/icons'
 import React from 'react'
 import styled from 'styled-components'
+import { CensoredQuickContact } from './Censored'
 
 export default function ContactInfoOld({ personalia }) {
   const { phoneNumber, emailAddress, linkedInUrl } = personalia
+  if (!phoneNumber) return <CensoredQuickContact />
+
   return (
     <QuickContactInfoGrid>
       <PhoneNumber>{phoneNumber}</PhoneNumber>
@@ -20,7 +23,7 @@ export default function ContactInfoOld({ personalia }) {
   )
 }
 
-const QuickContactInfoGrid = styled.div`
+export const QuickContactInfoGrid = styled.div`
   grid-area: quick-contact-info;
 
   --icon-height: 8mm;
@@ -45,50 +48,43 @@ const QuickContactInfoGrid = styled.div`
     'linkedin-url linkedin-icon';
 `
 
-const PhoneNumber = styled.span`
+const TextInfo = styled.span`
+  align-self: var(--info-align-self);
+  justify-self: var(--info-justify-self);
+  padding-right: var(--info-padding-right);
+  font-size: var(--info-font-size);
+`
+
+const PhoneNumber = styled(TextInfo)`
   grid-area: phone-number;
-  align-self: var(--info-align-self);
-  justify-self: var(--info-justify-self);
-  padding-right: var(--info-padding-right);
-  font-size: var(--info-font-size);
 `
 
-const EmailAddress = styled.span`
+const EmailAddress = styled(TextInfo)`
   grid-area: email-address;
-  align-self: var(--info-align-self);
-  justify-self: var(--info-justify-self);
-  padding-right: var(--info-padding-right);
-  font-size: var(--info-font-size);
 `
 
-const LinkedInUrl = styled.span`
+const LinkedInUrl = styled(TextInfo)`
   grid-area: linkedin-url;
-  align-self: var(--info-align-self);
-  justify-self: var(--info-justify-self);
-  padding-right: var(--info-padding-right);
-  font-size: var(--info-font-size);
 `
 
-const PhoneIcon = styled(PhoneIconSrc)`
-  grid-area: phone-icon;
+const IconCss = `
   height: var(--icon-height);
   margin: var(--icon-margin);
   align-self: var(--icon-align-self);
   justify-self: var(--icon-justify-self);
 `
 
-const MailIcon = styled(MailIconSrc)`
-  grid-area: mail-icon;
-  height: var(--icon-height);
-  margin: var(--icon-margin) 0;
-  align-self: var(--icon-align-self);
-  justify-self: var(--icon-justify-self);
+export const PhoneIcon = styled(PhoneIconSrc)`
+  grid-area: phone-icon;
+  ${IconCss}
 `
 
-const LinkedInIcon = styled(LinkedInIconSrc)`
+export const MailIcon = styled(MailIconSrc)`
+  grid-area: mail-icon;
+  ${IconCss}
+`
+
+export const LinkedInIcon = styled(LinkedInIconSrc)`
   grid-area: linkedin-icon;
-  height: var(--icon-height);
-  margin: var(--icon-margin) 0;
-  align-self: var(--icon-align-self);
-  justify-self: var(--icon-justify-self);
+  ${IconCss}
 `

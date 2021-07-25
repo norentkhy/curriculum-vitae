@@ -1,4 +1,5 @@
 import { UnorderedList, CompactListItem, Label } from './Styled'
+import { CensoredPersonaliaDiv } from './Censored'
 import React from 'react'
 
 export default function Personalia({ personalia }) {
@@ -12,6 +13,8 @@ export default function Personalia({ personalia }) {
     city,
     maritalStatus,
   } = personalia
+
+  if (!dateOfBirth) return <CensoredPersonaliaDiv />
 
   const Items = [
     <Name {...{ name }} />,
