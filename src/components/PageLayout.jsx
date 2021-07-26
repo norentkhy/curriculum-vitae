@@ -1,6 +1,7 @@
 import { FlexRow, FlexColumn, SectionTitle } from './Styled'
 import React from 'react'
 import styled from 'styled-components'
+import { useTagContext } from './TagContextProvider'
 
 export default function PageLayout({
   Header,
@@ -14,12 +15,13 @@ export default function PageLayout({
   ToolMastery,
   SoftwareBooks,
 }) {
+  const tag = useTagContext()
   const sideSections = [
-    { title: 'Spoken Languages', content: SpokenLanguages },
-    { title: 'Programming Languages', content: LanguageMastery },
-    { title: 'Tools', content: ToolMastery },
-    { title: 'Software Books', content: SoftwareBooks },
-    { title: 'Hobbies & Interests', content: HobbiesAndInterests },
+    { title: tag.spokenLanguages, content: SpokenLanguages },
+    { title: tag.programmingLanguages, content: LanguageMastery },
+    { title: tag.tools, content: ToolMastery },
+    { title: tag.softwareBooks, content: SoftwareBooks },
+    { title: tag.hobbiesAndInterests, content: HobbiesAndInterests },
   ]
 
   return (
@@ -53,15 +55,16 @@ function SideBar({ ContactInfo, Personalia, sideSections }) {
 }
 
 function Main({ Header, WorkExperience, Education }) {
+  const tag = useTagContext()
   return (
     <FlexColumnSpaceBetween>
       {Header}
       <div>
-        <SectionTitle>Work Experience</SectionTitle>
+        <SectionTitle>{tag.workExperience}</SectionTitle>
         {WorkExperience}
       </div>
       <div>
-        <SectionTitle>Education</SectionTitle>
+        <SectionTitle>{tag.education}</SectionTitle>
         {Education}
       </div>
     </FlexColumnSpaceBetween>

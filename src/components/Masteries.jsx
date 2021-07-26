@@ -29,7 +29,9 @@ const stars = {
   advanced: repeatStars([['filled', 4],['growing', 0], ['empty', 1]]),
   master: repeatStars([['filled', 4],['growing', 1], ['empty', 0]]),
   fluent: repeatStars([['filled', 4],['growing', 1], ['empty', 0]]),
+  vloeiend: repeatStars([['filled', 4],['growing', 1], ['empty', 0]]),
   native: repeatStars([['filled', 4],['growing', 1], ['empty', 0]]),
+  moedertaal: repeatStars([['filled', 4],['growing', 1], ['empty', 0]]),
 }
 
 function repeatStars(specs) {

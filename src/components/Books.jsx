@@ -1,6 +1,7 @@
 import { Label, RelativeFontSize75 } from './Styled'
 import React from 'react'
 import styled from 'styled-components'
+import { useTagContext } from './TagContextProvider'
 
 export default function Books({ books }) {
   return (
@@ -14,10 +15,11 @@ export default function Books({ books }) {
 }
 
 function FullListReference({ url }) {
+  const tag = useTagContext()
   return (
     <CompactListItem>
       <br />
-      <Label>goodreads list</Label>
+      <Label>{tag.goodreadsList}</Label>
       <a>{url}</a>
     </CompactListItem>
   )

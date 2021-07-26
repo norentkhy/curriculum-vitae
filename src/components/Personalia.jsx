@@ -1,92 +1,40 @@
 import { UnorderedList, CompactListItem, Label } from './Styled'
 import { CensoredPersonaliaDiv } from './Censored'
 import React from 'react'
+import { useTagContext } from './TagContextProvider'
 
 export default function Personalia({ personalia }) {
-  const {
-    name,
-    dateOfBirth,
-    nationality,
-    placeOfBirth,
-    address,
-    postalCode,
-    city,
-    maritalStatus,
-  } = personalia
-
-  if (!dateOfBirth) return <CensoredPersonaliaDiv />
-
-  const Items = [
-    <Name {...{ name }} />,
-    <Nationality {...{ nationality }} />,
-    <MaritalStatus {...{ maritalStatus }} />,
-    <DateOfBirth {...{ dateOfBirth }} />,
-    <PlaceOfBirth {...{ placeOfBirth }} />,
-    <Address {...{ address, postalCode, city }} />,
-  ]
+  const tag = useTagContext()
+  const items = useItems(tag, personalia)
+  if (!personalia.dateOfBirth) return <CensoredPersonaliaDiv />
 
   return (
     <UnorderedList>
-      {Items.map((Item, i) => (
-        <CompactListItem key={i}>{Item}</CompactListItem>
+      {items.map((item) => (
+        <ListItem label={item.label} value={item.value} key={item.label} />
       ))}
     </UnorderedList>
   )
 }
 
-function MaritalStatus({ maritalStatus }) {
-  return (
-    <>
-      <Label>Marital Status</Label>
-      {maritalStatus}
-    </>
-  )
+function useItems(tag, personalia) {
+  const name = `${personalia.name.first} ${personalia.name.last}`
+  const address = `${personalia.address}\n${personalia.postalCode} ${personalia.city}`
+  return [
+    { label: tag.fullName, value: name },
+    { label: tag.nationality, value: personalia.nationality },
+    { label: tag.maritalStatus, value: personalia.maritalStatus },
+    { label: tag.dateOfBirth, value: personalia.dateOfBirth },
+    { label: tag.placeOfBirth, value: personalia.placeOfBirth },
+    { label: tag.address, value: address },
+  ]
 }
 
-function Name({ name }) {
+function ListItem({ label, value }) {
   return (
-    <>
-      <Label>Full Name</Label>
-      {name.first} {name.last}
-    </>
-  )
-}
-
-function Nationality({ nationality }) {
-  return (
-    <>
-      <Label>Nationality</Label>
-      {nationality}
-    </>
-  )
-}
-
-function DateOfBirth({ dateOfBirth }) {
-  return (
-    <>
-      <Label>Date of Birth</Label>
-      {dateOfBirth}
-    </>
-  )
-}
-
-function PlaceOfBirth({ placeOfBirth }) {
-  return (
-    <>
-      <Label>Place of Birth</Label>
-      {placeOfBirth}
-    </>
-  )
-}
-
-function Address({ address, postalCode, city }) {
-  return (
-    <>
-      <Label>Address</Label>
-      <div>{address}</div>{' '}
-      <div>
-        {postalCode} {city}
-      </div>
-    </>
+    <CompactListItem>
+      <Label>{label}</Label>
+      {value}
+    </CompactListItem>
   )
 }

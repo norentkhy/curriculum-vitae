@@ -31,6 +31,7 @@ export const FlexColumnRightAligned = styled(RightAligned)`
 export const CompactListItem = styled.li`
   line-height: 1em;
   margin-bottom: 0.35em;
+  white-space: pre-wrap;
 `
 
 export const UnorderedList = styled.ul`

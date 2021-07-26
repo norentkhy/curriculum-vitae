@@ -1,4 +1,3 @@
-import data from './data'
 import portrait from './assets/portrait.png'
 import ContactInfo from './components/ContactInfo'
 import {
@@ -9,13 +8,29 @@ import {
   Experience,
   Personalia,
   Books,
+  TagProvider,
+  useTagContext,
 } from './components'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import loadData from './data'
 
-export default function CurriculumVitae() {
+export default function App({ language = 'EN', showPersonalia = false }) {
+  const [data, setData] = useState(null)
+  useEffect(() => loadData({ language, showPersonalia, setData }), [])
+
+  if (!data) return <div>Loading Curriculum Vitae...</div>
+  return (
+    <TagProvider tag={data.tag}>
+      <CurriculumVitae data={data} />
+    </TagProvider>
+  )
+}
+
+function CurriculumVitae({ data }) {
+  const tag = useTagContext()
   const { personalia, hobbiesAndInterests } = data
   const selectedWorkExperiences = selectWorkExperience(data)
-  const selectedEducation = selectEducation(data)
+  const selectedEducation = selectEducation(tag, data)
   const books = selectBooks(data)
   const [spokenLanguages, languageMasteries, toolMasteries] =
     selectMasteries(data)
@@ -39,13 +54,17 @@ export default function CurriculumVitae() {
 function selectWorkExperience(data) {
   const companyNames = [
     'Van Den Akker Engineering',
-    'University of Technology Eindhoven',
+    ['University of Technology Eindhoven', 'Technische Universiteit Eindhoven'],
     'IST Dynamical Systems and Ocean Robotics Lab',
     'Prodrive',
   ]
 
   return companyNames
-    .map((name) => data.workExperience.find(({ company }) => company === name))
+    .map((name) =>
+      data.workExperience.find(
+        ({ company }) => company === name || name.includes(company)
+      )
+    )
     .map(({ company, location, roles }) => ({
       organisation: company,
       location,
@@ -53,23 +72,23 @@ function selectWorkExperience(data) {
     }))
 }
 
-function selectEducation(data) {
+function selectEducation(tag, data) {
   const { bachelor, master } = data.education
   return [
     {
-      organisation: 'Mechanical Engineering',
+      organisation: master.program,
       location: master.institution,
       roles: [
         {
-          title: 'Master Control Systems Technology',
+          title: `Master ${master.specialization}`,
           period: master.period,
           tasks: [
             ['Thesis', master.graduationThesis],
-            ['Internship', master.internshipThesis],
+            [tag.internship, master.internshipThesis],
           ],
         },
         {
-          title: 'Bachelor Mechanical Engineering',
+          title: `Bachelor ${bachelor.major}`,
           period: bachelor.period,
           tasks: [
             ['Thesis', bachelor.thesis],

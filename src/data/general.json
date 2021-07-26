@@ -6,8 +6,14 @@
     }
   },
   "languageProficiencies": [
-    { "subject": "Dutch", "proficiency": "native" },
-    { "subject": "English", "proficiency": "fluent" }
+    {
+      "subject": { "EN": "Dutch", "NL": "Nederlands" },
+      "proficiency": { "EN": "native", "NL": "moedertaal" }
+    },
+    {
+      "subject": { "EN": "English", "NL": "Engels" },
+      "proficiency": { "EN": "fluent", "NL": "vloeiend" }
+    }
   ],
   "codingProficiencies": [
     { "subject": "javascript", "proficiency": "intermediate" },
@@ -51,30 +57,42 @@
     "true": "https://www.goodreads.com/review/list/75995094-norent-khy?ref=nav_mybooks&shelf=software"
   },
   "hobbiesAndInterests": [
-    "dancing",
-    "taijiquan",
-    "bouldering",
-    "slacklining",
-    "non-fiction books",
-    "meditation"
+    { "EN": "dancing", "NL": "dansen" },
+    { "EN": "taichi", "NL": "taichi" },
+    { "EN": "bouldering", "NL": "boulderen" },
+    { "EN": "slacklining", "NL": "slacklinen" },
+    { "EN": "non-fiction books", "NL": "non-fictie boeken" },
+    { "EN": "meditation", "NL": "meditatie" }
   ],
   "education": {
     "master": {
-      "program": "Mechanical Engineering",
-      "specialization": "Control Systems Technology",
+      "program": { "EN": "Mechanical Engineering", "NL": "Werktuigbouwkunde" },
+      "specialization": {
+        "EN": "Control Systems Technology",
+        "NL": "Regeltechniek"
+      },
       "internshipThesis": "State estimation for the coordination and control of a surface and an underwater vehicle",
       "graduationThesis": "Localization of a mobile robot utilizing an on-board camera for guidance and control",
-      "institution": "University of Technology, Eindhoven",
+      "institution": {
+        "EN": "University of Technology, Eindhoven",
+        "NL": "Technische Universiteit Eindhoven"
+      },
       "period": {
         "start": { "year": 2012 },
         "end": { "year": 2017 }
       }
     },
     "bachelor": {
-      "major": "Mechanical Engineering",
-      "minor": "Entrepeneurship and Innovation Sciences",
+      "major": { "EN": "Mechanical Engineering", "NL": "Werktuigbouwkunde" },
+      "minor": {
+        "EN": "Entrepeneurship and Innovation Sciences",
+        "NL": "Ondernemerschap en Innovatiewetenschappen"
+      },
       "thesis": "Membrane distillation",
-      "institution": "University of Technology, Eindhoven",
+      "institution": {
+        "EN": "University of Technology, Eindhoven",
+        "NL": "Technische Universiteit Eindhoven"
+      },
       "period": {
         "start": { "year": 2009 },
         "end": { "year": 2012 }
@@ -87,10 +105,19 @@
       "location": "Son",
       "roles": [
         {
-          "title": "Mechanical Engineer (part-time)",
+          "title": {
+            "EN": "Mechanical Engineer (part-time)",
+            "NL": "Werktuigbouwkundige (part-time)"
+          },
           "tasks": [
-            "Maintenance of technical drawings of mechanical parts",
-            "Design and prototyping of manufacturing tools"
+            {
+              "EN": "Maintenance of technical drawings of mechanical parts",
+              "NL": "Onderhoud van technische tekeningen van mechanische onderdelen"
+            },
+            {
+              "EN": "Design and prototyping of manufacturing tools",
+              "NL": "Ontwerp van productie hulpmiddelen"
+            }
           ],
           "period": {
             "start": { "month": 7, "year": 2012 },
@@ -104,10 +131,16 @@
       "location": "Rosmalen",
       "roles": [
         {
-          "title": "Commissioning Engineer",
+          "title": { "EN": "Commissioning Engineer", "NL": "Inbedrijfsteller" },
           "tasks": [
-            "Commissioning of PLC systems",
-            "Documentation of electromechanical systems"
+            {
+              "EN": "Commissioning of PLC systems",
+              "NL": "Inbedrijfstelling van PLC systemen"
+            },
+            {
+              "EN": "Documentation of electromechanical systems",
+              "NL": "Documentatie van elektromechanische systemen"
+            }
           ],
           "period": {
             "start": { "month": 7, "year": 2018 },
@@ -115,11 +148,23 @@
           }
         },
         {
-          "title": "Research and Development Engineer",
+          "title": {
+            "EN": "Research and Development Engineer",
+            "NL": "Onderzoeker & Ontwikkelaar"
+          },
           "tasks": [
-            "Commissioning of vision systems",
-            "Simulation of production lines for virtual commissioning",
-            "Mentorship of a graduate student for the design of an autonomous robot"
+            {
+              "EN": "Commissioning of vision systems",
+              "NL": "Inbedrijfstelling van computer visie systemen"
+            },
+            {
+              "EN": "Simulation of production lines for virtual commissioning",
+              "NL": "Simulatie van productielijnen voor virtuele inbedrijfstelling"
+            },
+            {
+              "EN": "Mentorship of a graduate student for the design of an autonomous robot",
+              "NL": "Begeleiding van afstudeerder voor het ontwerp van een autonome robot"
+            }
           ],
           "period": {
             "start": { "month": 1, "year": 2019 },
@@ -129,41 +174,67 @@
       ]
     },
     {
-      "company": "University of Technology Eindhoven",
+      "company": {
+        "EN": "University of Technology Eindhoven",
+        "NL": "Technische Universiteit Eindhoven"
+      },
       "location": "Eindhoven",
       "roles": [
         {
           "title": "Tutor (part-time)",
           "tasks": [
-            "Tutoring of 2nd year bachelor students for a multi-disciplinary case study"
+            {
+              "EN": "Tutoring of 2nd year bachelor students for a multi-disciplinary case study",
+              "NL": "Begeleiding van bachelor studenten voor een multidisciplinair project"
+            }
           ],
           "period": {
             "start": { "month": 9, "year": 2016 },
-            "end": { "month": 10, "year": 2016}
+            "end": { "month": 10, "year": 2016 }
           }
         },
         {
-          "title": "Printing Desk Assistant & Receptionist (part-time)",
-          "subtitle": "Built Environment Department",
+          "title": {
+            "EN": "Printing Assistant & Receptionist (part-time)",
+            "NL": "Print Assistent & Receptionist (part-time)"
+          },
+          "subtitle": {
+            "EN": "Built Environment Department",
+            "NL": "Afdeling Bouwkunde"
+          },
           "tasks": [
-            "Serving visitors and colleagues as the department's first point of contact",
-            "Administration of computers and software",
-            "Providing printing service assistance"
+            {
+              "EN": "Serving visitors and colleagues as the department's first point of contact",
+              "NL": "Facilitatie van contact als eerste contactpunt van de bouwkunde afdeling"
+            },
+            {
+              "EN": "Administration of computers and software",
+              "NL": "Administratie van computers en software"
+            },
+            {
+              "EN": "Providing printing service assistance",
+              "NL": "Facilitatie van printwerkzaamheden"
+            }
           ],
           "period": {
             "start": { "month": 11, "year": 2016 },
-            "end": { "month": 6, "year": 2017}
+            "end": { "month": 6, "year": 2017 }
           }
         }
       ]
     },
     {
       "company": "IST Dynamical Systems and Ocean Robotics Lab",
-      "location": "Lisbon",
+      "location": { "EN": "Lisbon", "NL": "Lissabon" },
       "roles": [
         {
-          "title": "Research Intern",
-          "tasks": ["State estimation of an autonomous diving buddy"],
+          "title": { "EN": "Research Intern", "NL": "Onderzoeker (stage)" },
+          "tasks": [
+            {
+              "EN": "State estimation of an autonomous diving buddy",
+              "NL": "Signaalverwerking voor toezichthouding van een autonome duikmaat-robot"
+            }
+          ],
           "period": {
             "start": { "month": 9, "year": 2014 },
             "end": { "month": 11, "year": 2014 }
@@ -171,5 +242,23 @@
         }
       ]
     }
-  ]
+  ],
+  "tag": {
+    "workExperience": { "EN": "Work Experience", "NL": "Werkervaring" },
+    "education": { "EN": "Education", "NL": "Opleiding" },
+    "spokenLanguages": { "EN": "Languages", "NL": "Talen" },
+    "programmingLanguages": { "EN": "Programming Languages", "NL": "Programmeertalen" },
+    "tools": { "EN": "Tools", "NL": "Programmeertools" },
+    "softwareBooks": { "EN": "Software Books", "NL": "Software Boeken" },
+    "goodreadsList": { "EN": "goodreads list", "NL": "goodreads lijst" },
+    "hobbiesAndInterests": { "EN": "Hobbies & Interests", "NL": "Hobby's & Interesses" },
+    "fullName": { "EN": "Full Name", "NL": "Volledige Naam" },
+    "dateOfBirth": { "EN": "Date of Birth", "NL": "Geboortedatum" },
+    "gender": { "EN": "Gender", "NL": "Geslacht" },
+    "nationality": { "EN": "Nationality", "NL":  "Nationaliteit"},
+    "maritalStatus": { "EN": "Marital Status", "NL": "Huwelijke Staat" },
+    "placeOfBirth": { "EN": "Place of Birth", "NL": "Geboorteplaats" },
+    "address": { "EN": "Address", "NL": "Adres" },
+    "internship": { "EN": "Internship", "NL": "Stage"}
+  }
 }
