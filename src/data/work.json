@@ -1,0 +1,146 @@
+{
+  "workExperience": [
+    {
+      "company": "Prodrive",
+      "location": "Son",
+      "roles": [
+        {
+          "title": {
+            "EN": "Mechanical Engineer (part-time)",
+            "NL": "Werktuigbouwkundige (part-time)"
+          },
+          "tasks": [
+            {
+              "EN": "Maintenance of technical drawings of mechanical parts",
+              "NL": "Onderhoud van technische tekeningen van mechanische onderdelen"
+            },
+            {
+              "EN": "Design and prototyping of manufacturing tools",
+              "NL": "Ontwerp van productie hulpmiddelen"
+            }
+          ],
+          "period": {
+            "start": { "month": 7, "year": 2012 },
+            "end": { "month": 3, "year": 2013 }
+          }
+        }
+      ]
+    },
+    {
+      "company": "Van Den Akker Engineering",
+      "location": "Rosmalen",
+      "roles": [
+        {
+          "title": { "EN": "Commissioning Engineer", "NL": "Inbedrijfsteller" },
+          "tasks": [
+            {
+              "EN": "Commissioning of PLC systems",
+              "NL": "Inbedrijfstelling van PLC systemen"
+            },
+            {
+              "EN": "Documentation of electromechanical systems",
+              "NL": "Documentatie van elektromechanische systemen"
+            }
+          ],
+          "period": {
+            "start": { "month": 7, "year": 2018 },
+            "end": { "month": 12, "year": 2018 }
+          }
+        },
+        {
+          "title": {
+            "EN": "Research and Development Engineer",
+            "NL": "Onderzoeker & Ontwikkelaar"
+          },
+          "tasks": [
+            {
+              "EN": "Commissioning of vision systems",
+              "NL": "Inbedrijfstelling van computer visie systemen"
+            },
+            {
+              "EN": "Simulation of production lines for virtual commissioning",
+              "NL": "Simulatie van productielijnen voor virtuele inbedrijfstelling"
+            },
+            {
+              "EN": "Mentorship of a graduate student for the design of an autonomous robot",
+              "NL": "Begeleiding van afstudeerder voor het ontwerp van een autonome robot"
+            }
+          ],
+          "period": {
+            "start": { "month": 1, "year": 2019 },
+            "end": { "month": 8, "year": 2019 }
+          }
+        }
+      ]
+    },
+    {
+      "company": {
+        "EN": "University of Technology Eindhoven",
+        "NL": "Technische Universiteit Eindhoven"
+      },
+      "location": "Eindhoven",
+      "roles": [
+        {
+          "title": "Tutor (part-time)",
+          "tasks": [
+            {
+              "EN": "Tutoring of 2nd year bachelor students for a multi-disciplinary case study",
+              "NL": "Begeleiding van bachelor studenten voor een multidisciplinair project"
+            }
+          ],
+          "period": {
+            "start": { "month": 9, "year": 2016 },
+            "end": { "month": 10, "year": 2016 }
+          }
+        },
+        {
+          "title": {
+            "EN": "Printing Assistant & Receptionist (part-time)",
+            "NL": "Print Assistent & Receptionist (part-time)"
+          },
+          "subtitle": {
+            "EN": "Built Environment Department",
+            "NL": "Afdeling Bouwkunde"
+          },
+          "tasks": [
+            {
+              "EN": "Serving visitors and colleagues as the department's first point of contact",
+              "NL": "Facilitatie van contact als eerste contactpunt van de bouwkunde afdeling"
+            },
+            {
+              "EN": "Administration of computers and software",
+              "NL": "Administratie van computers en software"
+            },
+            {
+              "EN": "Providing printing service assistance",
+              "NL": "Facilitatie van printwerkzaamheden"
+            }
+          ],
+          "period": {
+            "start": { "month": 11, "year": 2016 },
+            "end": { "month": 6, "year": 2017 }
+          }
+        }
+      ]
+    },
+    {
+      "company": "IST Dynamical Systems and Ocean Robotics Lab",
+      "location": { "EN": "Lisbon", "NL": "Lissabon" },
+      "roles": [
+        {
+          "title": { "EN": "Research Intern", "NL": "Onderzoeker (stage)" },
+          "tasks": [
+            {
+              "EN": "State estimation of an autonomous diving buddy",
+              "NL": "Signaalverwerking voor toezichthouding van een autonome duikmaat-robot"
+            }
+          ],
+          "period": {
+            "start": { "month": 9, "year": 2014 },
+            "end": { "month": 11, "year": 2014 }
+          }
+        }
+      ]
+    }
+  ]
+}

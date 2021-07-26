@@ -1,0 +1,26 @@
+{
+  "tag": {
+    "workExperience": { "EN": "Work Experience", "NL": "Werkervaring" },
+    "education": { "EN": "Education", "NL": "Opleiding" },
+    "spokenLanguages": { "EN": "Languages", "NL": "Talen" },
+    "programmingLanguages": {
+      "EN": "Programming Languages",
+      "NL": "Programmeertalen"
+    },
+    "tools": { "EN": "Tools", "NL": "Programmeertools" },
+    "softwareBooks": { "EN": "Software Books", "NL": "Software Boeken" },
+    "goodreadsList": { "EN": "goodreads list", "NL": "goodreads lijst" },
+    "hobbiesAndInterests": {
+      "EN": "Hobbies & Interests",
+      "NL": "Hobby's & Interesses"
+    },
+    "fullName": { "EN": "Full Name", "NL": "Volledige Naam" },
+    "dateOfBirth": { "EN": "Date of Birth", "NL": "Geboortedatum" },
+    "gender": { "EN": "Gender", "NL": "Geslacht" },
+    "nationality": { "EN": "Nationality", "NL": "Nationaliteit" },
+    "maritalStatus": { "EN": "Marital Status", "NL": "Huwelijke Staat" },
+    "placeOfBirth": { "EN": "Place of Birth", "NL": "Geboorteplaats" },
+    "address": { "EN": "Address", "NL": "Adres" },
+    "internship": { "EN": "Internship", "NL": "Stage" }
+  }
+}

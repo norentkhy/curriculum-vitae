@@ -1,7 +1,19 @@
 import generalData from './general.json'
+import programmingData from './programming.json'
+import educationData from './education.json'
+import workData from './work.json'
+import tagData from './tag.json'
+
+const mergedData = {
+  ...generalData,
+  ...programmingData,
+  ...educationData,
+  ...workData,
+  ...tagData,
+}
 
 export default function loadData({ language, showPersonalia, setData }) {
-  const data = getDataInLanguage(language, generalData)
+  const data = getDataInLanguage(language, mergedData)
   setData(data)
   if (showPersonalia) overwritePersonalia(language, setData)
 }

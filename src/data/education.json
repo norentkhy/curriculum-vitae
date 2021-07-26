@@ -1,0 +1,37 @@
+{
+  "education": {
+    "master": {
+      "program": { "EN": "Mechanical Engineering", "NL": "Werktuigbouwkunde" },
+      "specialization": {
+        "EN": "Control Systems Technology",
+        "NL": "Regeltechniek"
+      },
+      "internshipThesis": "State estimation for the coordination and control of a surface and an underwater vehicle",
+      "graduationThesis": "Localization of a mobile robot utilizing an on-board camera for guidance and control",
+      "institution": {
+        "EN": "University of Technology, Eindhoven",
+        "NL": "Technische Universiteit Eindhoven"
+      },
+      "period": {
+        "start": { "year": 2012 },
+        "end": { "year": 2017 }
+      }
+    },
+    "bachelor": {
+      "major": { "EN": "Mechanical Engineering", "NL": "Werktuigbouwkunde" },
+      "minor": {
+        "EN": "Entrepeneurship and Innovation Sciences",
+        "NL": "Ondernemerschap en Innovatiewetenschappen"
+      },
+      "thesis": "Membrane distillation",
+      "institution": {
+        "EN": "University of Technology, Eindhoven",
+        "NL": "Technische Universiteit Eindhoven"
+      },
+      "period": {
+        "start": { "year": 2009 },
+        "end": { "year": 2012 }
+      }
+    }
+  }
+}

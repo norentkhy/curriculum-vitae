@@ -1,0 +1,43 @@
+{
+  "codingProficiencies": [
+    { "subject": "JavaScript", "proficiency": "intermediate" },
+    { "subject": "TypeScript", "proficiency": "improver" },
+    { "subject": "Elixir", "proficiency": "improver" },
+    { "subject": "CSS", "proficiency": "improver" }
+  ],
+  "toolProficiencies": [
+    { "subject": "git", "proficiency": "intermediate" },
+    { "subject": "vs code", "proficiency": "intermediate" },
+    { "subject": "vim", "proficiency": "intermediate" },
+    { "subject": "react.js", "proficiency": "intermediate" },
+    { "subject": "jest.js", "proficiency": "intermediate" },
+    { "subject": "cypress.js", "proficiency": "improver" },
+    { "subject": "testing-library.js", "proficiency": "intermediate" }
+  ],
+  "favouriteSoftwareBooks": [
+    {
+      "title": "Grokking Simplicity",
+      "subtitle": "Taming complex software with functional thinking",
+      "author": { "givenName": "Eric", "surname": "Normand" }
+    },
+    {
+      "title": "Refactoring",
+      "subtitle": "Improving the design of existing code",
+      "author": { "givenName": "Martin", "surname": "Fowler" }
+    },
+    {
+      "title": "Practical Vim",
+      "subtitle": "Edit text at the speed of thought",
+      "author": { "givenName": "Brian", "surname": "Hogan" }
+    },
+    {
+      "title": "The Pragmatic Programmer",
+      "subtitle": "From Journeyman to Master",
+      "author": { "givenName": "Andy", "surname": "Hunt" }
+    }
+  ],
+  "linkToSoftwareBooks": {
+    "short": "https://bit.ly/2TdX6NF",
+    "true": "https://www.goodreads.com/review/list/75995094-norent-khy?ref=nav_mybooks&shelf=software"
+  }
+}
