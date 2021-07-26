@@ -11,9 +11,9 @@
   ],
   "codingProficiencies": [
     { "subject": "javascript", "proficiency": "intermediate" },
-    { "subject": "css", "proficiency": "improver" },
-    { "subject": "bash", "proficiency": "improver" },
-    { "subject": "elixir", "proficiency": "improver" }
+    { "subject": "typescript", "proficiency": "improver" },
+    { "subject": "elixir", "proficiency": "improver" },
+    { "subject": "css", "proficiency": "improver" }
   ],
   "toolProficiencies": [
     { "subject": "git", "proficiency": "intermediate" },
